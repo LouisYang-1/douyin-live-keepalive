@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "抖音直播防暂停 Douyin Live Keep-Alive",
+  "version": "1.0.0",
+  "description": "阻止抖音网页版直播因长时间无操作或切后台而自动暂停 | Prevent Douyin live streams from auto-pausing when idle or in background",
+  "content_scripts": [
+    {
+      "matches": ["*://live.douyin.com/*"],
+      "js": ["keepalive.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}

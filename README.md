@@ -32,6 +32,17 @@
    - **方式 B**：点浏览器右上角 Tampermonkey 图标 → 添加新脚本 → 全选删除模板代码 → 粘贴 `douyin-live-keepalive.user.js` 的全部内容 → `Ctrl + S` 保存。
 3. 打开或刷新 `live.douyin.com` 的直播间即可生效。脚本没有任何界面，装完即忘。
 
+### 不想装 Tampermonkey？直接装本地扩展（Ego Lite 等浏览器适用）
+
+部分浏览器（如 Ego Lite）会屏蔽 Chrome 应用店的安装通道，这时可以用本仓库自带的扩展版本，效果与油猴脚本完全一致：
+
+1. 下载本仓库（`Code → Download ZIP` 解压，或 `git clone`）；
+2. 地址栏输入 `chrome://extensions` 打开扩展管理页；
+3. 打开右上角**开发者模式**；
+4. 点击**加载已解压的扩展程序**（Ego Lite 中叫"加载未打包的扩展程序"），选择本仓库的 `extension` 文件夹即可。
+
+之后如需更新，替换 `extension/keepalive.js` 后在扩展管理页点击该扩展的刷新按钮即可。
+
 ## 工作原理
 
 1. **可见性伪装**：在页面所有代码运行之前（`@run-at document-start`），把 `document.hidden` / `document.visibilityState` / `document.hasFocus()` 改写为"永远可见、永远有焦点"，并拦截 `visibilitychange` / 窗口级 `blur` 事件，让抖音的代码感知不到页面进入了后台。脚本自己会先记下真实可见性，供第 4 层判断使用。
