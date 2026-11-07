@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Douyin Live Keep-Alive | 抖音直播防暂停
-// @namespace    https://github.com/yanglouis/douyin-live-keepalive
+// @namespace    https://github.com/LouisYang-1/douyin-live-keepalive
 // @version      1.0.0
 // @description  阻止抖音网页版直播因长时间无操作或切后台而自动暂停：伪装页面可见性、模拟用户活动、自动关闭"继续观看"弹窗、自动恢复非人为暂停。Prevent Douyin (douyin.com) live streams from auto-pausing when idle or in background.
-// @author       yang'louis
+// @author       LouisYang-1 (YangLuYi)
 // @match        *://live.douyin.com/*
 // @run-at       document-start
 // @grant        none
